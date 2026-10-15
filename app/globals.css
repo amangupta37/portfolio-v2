@@ -10,6 +10,49 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms) 1;
+  --animate-wave: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes cell-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: scale(1.12);
+    opacity: 0.9;
+    background-color: var(--cell-shadow-color);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +66,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom pointer is used only on devices with a fine pointer (e.g. a mouse).
+   On touch devices we keep native behavior and skip the custom cursor. */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Highlight color for user-selected text, app-wide. */
+::selection {
+  background-color: rgba(0, 174, 239, 0.25);
+  color: #00aeef;
+}
+::-moz-selection {
+  background-color: rgba(0, 174, 239, 0.25);
+  color: #00aeef;
 }
