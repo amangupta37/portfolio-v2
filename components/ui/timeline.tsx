@@ -52,7 +52,7 @@ const interpolate = (value: number, input: number[], output: number[]) => {
 };
 
 const FILL_CLASS =
-  "absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-b from-indigo-500 via-blue-500 to-sky-300 shadow-[0_0_12px_2px_rgba(56,189,248,0.6)]";
+  "absolute inset-x-0 top-0 w-px rounded-full bg-gradient-to-b from-indigo-500 via-blue-500 to-sky-300 shadow-[0_0_12px_2px_rgba(56,189,248,0.6)] md:w-[2px]";
 
 /** A branch line that fills in step with the trunk as the glow passes it. */
 const BranchLine = ({
@@ -70,7 +70,7 @@ const BranchLine = ({
   return (
     <div
       style={{ top, height }}
-      className="absolute left-[32px] w-[2px] bg-neutral-800 md:left-[64px]"
+      className="absolute left-[32px] w-px bg-neutral-800 md:left-[64px] md:w-[2px]"
     >
       <motion.div style={{ height: lit }} className={FILL_CLASS} />
     </div>
@@ -272,13 +272,13 @@ export const Timeline = ({
                   {isCurrent && (
                     <>
                       {/* Spinning conic ring */}
-                      <span className="absolute inset-0 animate-spin rounded-full bg-[conic-gradient(from_0deg,transparent_0%,rgba(56,189,248,0.95)_28%,transparent_55%)] [animation-duration:2.4s] [mask:radial-gradient(farthest-side,transparent_calc(100%_-_2px),black_calc(100%_-_2px))]" />
-                      <span className="absolute h-6 w-6 animate-ping rounded-full bg-sky-500/30" />
+                      <span className="absolute inset-[13px] animate-spin rounded-full bg-[conic-gradient(from_0deg,transparent_0%,rgba(56,189,248,0.95)_28%,transparent_55%)] [animation-duration:2.4s] [mask:radial-gradient(farthest-side,transparent_calc(100%_-_2px),black_calc(100%_-_2px))] md:inset-0" />
+                      <span className="absolute h-4 w-4 animate-ping rounded-full bg-sky-500/30 md:h-6 md:w-6" />
                     </>
                   )}
                   <div
                     className={cn(
-                      "relative h-4 w-4 rounded-full border transition-all duration-500",
+                      "relative h-2.5 w-2.5 rounded-full border transition-all duration-500 md:h-4 md:w-4",
                       isReached
                         ? "border-sky-200 bg-sky-400 shadow-[0_0_18px_4px_rgba(56,189,248,0.6)]"
                         : "border-neutral-700 bg-neutral-800",
@@ -346,7 +346,7 @@ export const Timeline = ({
         {/* Trunk */}
         <div
           style={{ height }}
-          className="absolute top-0 left-4 w-[2px] overflow-hidden bg-neutral-800 [mask-image:linear-gradient(to_bottom,transparent_0%,black_4%,black_98%,transparent_100%)] md:left-8"
+          className="absolute top-0 left-4 w-px overflow-hidden bg-neutral-800 [mask-image:linear-gradient(to_bottom,transparent_0%,black_4%,black_98%,transparent_100%)] md:left-8 md:w-[2px]"
         >
           {/* Soft wide glow behind the fill */}
           <motion.div
@@ -377,7 +377,7 @@ export const Timeline = ({
                   style={{ top: first - ARC, height: ARC }}
                   className={cn(
                     arcBase,
-                    "rounded-tr-[18px] border-t-2 border-r-2 md:rounded-tr-[34px]",
+                    "rounded-tr-[18px] border-t border-r md:rounded-tr-[34px] md:border-t-2 md:border-r-2",
                     forkLit ? lit : dim,
                   )}
                 />
@@ -391,7 +391,7 @@ export const Timeline = ({
                   style={{ top: merge - ARC, height: ARC }}
                   className={cn(
                     arcBase,
-                    "rounded-br-[18px] border-r-2 border-b-2 md:rounded-br-[34px]",
+                    "rounded-br-[18px] border-r border-b md:rounded-br-[34px] md:border-r-2 md:border-b-2",
                     mergeLit ? lit : dim,
                   )}
                 />
