@@ -26,6 +26,8 @@ const Hero = () => {
         <ShootingStars />
         <BackgroundRippleEffect />
 
+
+
         <div className="relative z-10 flex w-full max-w-2xl flex-col items-center gap-5 text-center">
           {/* Profile image (circular) */}
           <div className="relative w-40 rounded-full border border-white/10 p-2 md:w-48">

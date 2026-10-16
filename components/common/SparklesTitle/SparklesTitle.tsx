@@ -23,7 +23,7 @@ const SparklesTitle = ({
 }: SparklesTitleProps) => {
   return (
     <div className={cn("flex w-full flex-col items-center text-center", className)}>
-      <div className="flex w-fit flex-col items-center px-40">
+      <div className="flex w-fit flex-col items-center px-4 md:px-40">
         <h2
           className={cn(
             "text-center text-3xl font-bold text-white md:text-5xl",
