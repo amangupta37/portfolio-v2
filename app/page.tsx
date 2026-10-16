@@ -2,6 +2,7 @@ import Navbar from "@/components/common/Navbar/Navbar";
 import AboutMe from "@/components/sections/AboutMe/AboutMe";
 import Hero from "@/components/sections/Hero/Hero";
 import Timeline from "@/components/sections/Timeline/Timeline";
+import Recognitions from "@/components/sections/Recognitions/Recognitions";
 
 const Home = () => {
   return (
@@ -12,6 +13,10 @@ const Home = () => {
       <Hero />
       <AboutMe />
       <Timeline />
+      {/* <AboutMe />
+      <AboutMe /> */}
+      <Recognitions />
+
     </>
   );
 };
