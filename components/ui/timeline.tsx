@@ -228,7 +228,7 @@ export const Timeline = ({
   });
 
   return (
-    <div className={cn("w-full font-sans md:px-10", className)}>
+    <div className={cn("w-full pt-16 font-sans md:px-10 md:pt-24", className)}>
       {(title || description) && (
         <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-20 lg:px-10">
           {title && (

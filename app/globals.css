@@ -12,6 +12,18 @@
   --font-mono: var(--font-geist-mono);
   --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms) 1;
   --animate-wave: wave 2.5s ease-in-out infinite;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }
 
 @keyframes wave {
