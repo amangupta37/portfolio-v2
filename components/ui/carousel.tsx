@@ -65,7 +65,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="relative z-10 mx-[4vmin] flex h-[70vmin] w-[70vmin] flex-1 flex-col items-center justify-center text-center text-white opacity-100 transition-all duration-300 ease-in-out"
+        className="relative z-10 mx-[2vmin] flex h-[42vmin] w-[64vmin] flex-1 flex-col items-center justify-center text-center text-white opacity-100 transition-all duration-300 ease-in-out md:w-[52vmin]"
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -108,11 +108,11 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${current === index ? "visible opacity-100" : "invisible opacity-0"
             }`}
         >
-          <h2 className="relative text-lg font-semibold md:text-2xl lg:text-4xl">
+          <h2 className="relative text-base font-semibold md:text-xl lg:text-2xl">
             {title}
           </h2>
           <div className="flex justify-center">
-            <button className="mx-auto mt-6 flex h-12 w-fit items-center justify-center rounded-2xl border border-transparent bg-white px-4 py-2 text-xs text-black shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200 hover:shadow-lg sm:text-sm">
+            <button className="mx-auto mt-4 flex h-10 w-fit items-center justify-center rounded-2xl border border-transparent bg-white px-4 py-2 text-xs text-black shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200 hover:shadow-lg sm:text-sm">
               {button}
             </button>
           </div>
@@ -149,14 +149,16 @@ interface CarouselProps {
   slides: SlideData[];
 }
 
-/** Transition duration (ms) — keep in sync with `duration-1000` below. */
-const SLIDE_DURATION = 1000;
+/** Transition duration (ms) — keep in sync with `duration-700` below. */
+const SLIDE_DURATION = 700;
 
 const Carousel = ({ slides }: CarouselProps) => {
   const count = slides.length;
-  // Append a clone of the first slide so the track can keep moving forward past
-  // the last real slide, then silently snap back to the start for an endless loop.
-  const displaySlides = count > 1 ? [...slides, slides[0]] : slides;
+  // Append a full clone of the slide set so that, however many cards are visible
+  // at once, the viewport is always filled as we move past the last real slide.
+  // Once we reach the start of the clone (index === count) we silently snap back
+  // to index 0 — a visually identical position — for a seamless endless loop.
+  const displaySlides = count > 1 ? [...slides, ...slides] : slides;
 
   const [current, setCurrent] = useState(0);
   const [animate, setAnimate] = useState(true);
@@ -220,7 +222,7 @@ const Carousel = ({ slides }: CarouselProps) => {
     const interval = setInterval(() => {
       setAnimate(true);
       setCurrent((prev) => prev + 1);
-    }, 4000);
+    }, 2200);
     return () => clearInterval(interval);
   }, [isHovered, count]);
 
@@ -228,13 +230,13 @@ const Carousel = ({ slides }: CarouselProps) => {
 
   return (
     <div
-      className="relative mx-auto h-[70vmin] w-[70vmin]"
+      className="relative mx-auto h-[42vmin] w-full"
       aria-labelledby={`carousel-heading-${id}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <ul
-        className={`absolute mx-[-4vmin] flex ${animate ? "transition-transform duration-1000 ease-in-out" : ""
+        className={`absolute mx-[-2vmin] flex ${animate ? "transition-transform duration-700 ease-in-out" : ""
           }`}
         style={{
           transform: `translateX(-${current * (100 / displaySlides.length)}%)`,

@@ -1,4 +1,4 @@
-import Navbar from "@/components/common/Navbar/Navbar";
+import StickyNavbar from "@/components/common/Navbar/StickyNavbar";
 import AboutMe from "@/components/sections/AboutMe/AboutMe";
 import Hero from "@/components/sections/Hero/Hero";
 import Timeline from "@/components/sections/Timeline/Timeline";
@@ -10,13 +10,13 @@ import PersonalBranding from "@/components/sections/PersonalBranding/PersonalBra
 const Home = () => {
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-50">
-        <Navbar />
-      </div>
+      <StickyNavbar watchId="timeline-section" />
       <Hero />
       <AboutMe />
       <Skills />
-      <Timeline />
+      <div id="timeline-section">
+        <Timeline />
+      </div>
       {/* <AboutMe />
       <AboutMe /> */}
       <Recognitions />

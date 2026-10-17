@@ -1,0 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+import Navbar from "./Navbar";
+
+/**
+ * Renders the fixed navbar and hides it while the element matching
+ * `watchId` (the Timeline section) is within the viewport.
+ */
+const StickyNavbar = ({ watchId = "timeline-section" }: { watchId?: string }) => {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const target = document.getElementById(watchId);
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setHidden(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(target);
+
+    return () => observer.disconnect();
+  }, [watchId]);
+
+  return (
+    <div
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        hidden
+          ? "pointer-events-none -translate-y-full opacity-0"
+          : "translate-y-0 opacity-100"
+      }`}
+    >
+      <Navbar />
+    </div>
+  );
+};
+
+export default StickyNavbar;
