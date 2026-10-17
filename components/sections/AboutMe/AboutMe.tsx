@@ -3,6 +3,7 @@ import SparklesTitle from "@/components/common/SparklesTitle/SparklesTitle";
 import { Terminal } from "@/components/ui/terminal";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const AboutMe = () => {
           return (
@@ -18,13 +19,17 @@ const AboutMe = () => {
                                                   className="w-full h-full text-center md:text-left"
                                         >
                                                   <p className="mx-auto max-w-lg text-lg text-neutral-400 md:mx-0 md:text-3xl">
-                                                            I'm a Frontend Engineer with 4+ years of experience building scalable & performant Frontend Systems.
+                                                            <TextGenerateEffect
+                                                                      words="I'm a Frontend Engineer with 4+ years of experience building scalable & performant Frontend Systems."
+                                                            />
                                                   </p>
 
                                                   <br />
 
                                                   <div className="mx-auto flex max-w-lg flex-wrap items-center justify-center gap-x-2 text-lg text-neutral-400 md:mx-0 md:justify-start md:text-3xl">
-                                                            Currently focused on agentic AI engineering & the evolution from
+                                                            <TextGenerateEffect
+                                                                      words="Currently focused on agentic AI engineering & the evolution from"
+                                                            />
                                                             <PointerHighlight
                                                                       rectangleClassName="border-blue-500"
                                                                       pointerClassName="text-blue-500"
@@ -37,12 +42,16 @@ const AboutMe = () => {
 
                                                   <br />
                                                   <p className="mx-auto max-w-lg text-lg text-neutral-400 md:mx-0 md:text-3xl">
-                                                            Developed & deploy 10+ AI workflows that automate key stages of the Frontend Development.
+                                                            <TextGenerateEffect
+                                                                      words="Developed & deploy 10+ AI workflows that automate key stages of the Frontend Development."
+                                                            />
                                                   </p>
 
                                                   <br />
                                                   <div className="mx-auto flex max-w-lg flex-wrap items-center justify-center gap-x-2 text-lg text-neutral-400 md:mx-0 md:justify-start md:text-3xl">
-                                                            Cracked 7+ Frontend Interviews of Top Product Based Companies.
+                                                            <TextGenerateEffect
+                                                                      words="Cracked 7+ Frontend Interviews of Top Product Based Companies."
+                                                            />
                                                   </div>
                                         </FollowerPointerCard>
 
