@@ -19,7 +19,6 @@ const Home = () => {
       </div>
       <Recognitions />
       <Talks />
-      <PersonalBranding />
     </>
   );
 };

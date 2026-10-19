@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,6 +24,7 @@
     opacity: 0;
     transform: translate(-72%, -62%) scale(0.5);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -40%) scale(1);
@@ -27,23 +32,29 @@
 }
 
 @keyframes wave {
+
   0%,
   60%,
   100% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
   }
+
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
@@ -93,6 +104,7 @@ body {
   background-color: rgba(0, 174, 239, 0.25);
   color: #00aeef;
 }
+
 ::-moz-selection {
   background-color: rgba(0, 174, 239, 0.25);
   color: #00aeef;
