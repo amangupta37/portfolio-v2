@@ -4,6 +4,7 @@ import { Terminal } from "@/components/ui/terminal";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import CurveMarquee from "@/components/effects/CurveMarquee";
 
 const AboutMe = () => {
           return (
@@ -11,6 +12,15 @@ const AboutMe = () => {
                               <SparklesTitle title="About Me" className="relative z-10 mx-auto max-w-6xl" />
 
                               <BackgroundBeams />
+
+                              {/* Marquee text flowing along a Bézier curve — decorative background layer */}
+                              <CurveMarquee
+                                        className="z-[1]"
+                                        textColor="#737373"
+                                        textOpacity={0.12}
+                                        fontSize={16}
+                                        speed={20}
+                              />
 
                               <div className="relative z-10 mx-auto mt-8 grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 md:grid-cols-2 md:gap-32">
                                         {/* Left: text */}
