@@ -16,7 +16,7 @@ const TALKS: string[] = [
           "/talks/talk_001.jpeg",
           "/talks/talk_09.jpg",
           "/talks/talk_10.png",
-          "/talks/talk_11.jpg",
+          "/talks/talk11.jpg",
           "/talks/talk_12.jpeg",
           "/talks/talk_13.jpeg",
           "/talks/talk_14.png",
