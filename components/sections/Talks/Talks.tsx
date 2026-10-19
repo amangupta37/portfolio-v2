@@ -3,51 +3,23 @@ import { Spotlight } from "@/components/ui/spotlight";
 import Backdrop from "@/components/common/Backdrop/Backdrop";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
-interface Talk {
-          title: string;
-          meta: string;
-          /** Photo from the talk. Local files under `public/` or an allow-listed remote host. */
-          image: string;
-}
+const TALKS: string[] = [
 
-// TODO: swap these placeholder photos for your own (e.g. "/talks/react-india.jpg").
-const TALKS: Talk[] = [
-          {
-                    title: "From SDLC to ADLC",
-                    meta: "Frontend Conf · 2025",
-                    image:
-                              "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600&auto=format&fit=crop",
-          },
-          {
-                    title: "Micro-frontends at scale",
-                    meta: "React Bangalore · 2025",
-                    image:
-                              "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1600&auto=format&fit=crop",
-          },
-          {
-                    title: "AI workflows for frontend",
-                    meta: "Engineering Summit · 2024",
-                    image:
-                              "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1600&auto=format&fit=crop",
-          },
-          {
-                    title: "Lighthouse 37 → 97",
-                    meta: "JSConf meetup · 2024",
-                    image:
-                              "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=1600&auto=format&fit=crop",
-          },
-          {
-                    title: "Cracking frontend interviews",
-                    meta: "Community AMA · 2023",
-                    image:
-                              "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1600&auto=format&fit=crop",
-          },
-          {
-                    title: "Real-time UIs with WebSockets",
-                    meta: "DevFest · 2023",
-                    image:
-                              "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=1600&auto=format&fit=crop",
-          },
+          "/talks/talk_01.jpeg",
+          "/talks/talk_02.png",
+          "/talks/talk_03.jpg",
+          "/talks/talk_04.jpg",
+          "/talks/talk_05.png",
+          "/talks/talk_06.jpeg",
+          "/talks/talk_07.jpg",
+          "/talks/talk_08.jpg",
+          "/talks/talk_001.jpeg",
+          "/talks/talk_09.jpg",
+          "/talks/talk_10.png",
+          "/talks/talk_11.jpg",
+          "/talks/talk_12.jpeg",
+          "/talks/talk_13.jpeg",
+          "/talks/talk_14.png",
 ];
 
 const Talks = () => {
@@ -73,15 +45,12 @@ const Talks = () => {
                                         </p>
 
                                         <div className="mt-16 grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                                                  {TALKS.map((talk) => (
+                                                  {TALKS.map((image) => (
                                                             <DirectionAwareHover
-                                                                      key={talk.title}
-                                                                      imageUrl={talk.image}
+                                                                      key={image}
+                                                                      imageUrl={image}
                                                                       className="h-72 w-full rounded-2xl border border-white/10 md:h-80 md:w-full"
-                                                            >
-                                                                      <p className="text-xl font-bold">{talk.title}</p>
-                                                                      <p className="text-sm font-normal text-neutral-200">{talk.meta}</p>
-                                                            </DirectionAwareHover>
+                                                            />
                                                   ))}
                                         </div>
                               </div>
