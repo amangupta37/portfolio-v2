@@ -8,7 +8,7 @@ import CurveMarquee from "@/components/effects/CurveMarquee";
 
 const AboutMe = () => {
           return (
-                    <section id="about" className="relative flex min-h-screen w-full scroll-mt-24 flex-col overflow-hidden bg-neutral-950 px-6 py-16 antialiased">
+                    <section id="about" className="relative flex min-h-[min(100vh,960px)] w-full scroll-mt-24 flex-col justify-center overflow-hidden bg-neutral-950 px-6 py-16 antialiased">
                               <SparklesTitle title="About Me" className="relative z-10 mx-auto max-w-6xl" />
 
                               <BackgroundBeams />

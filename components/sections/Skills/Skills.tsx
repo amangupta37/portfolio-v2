@@ -106,7 +106,7 @@ const STATE_DATA: { label: string; src: string }[] = [
 
 const Skills = () => {
           return (
-                    <section id="skills" className="relative flex h-full min-h-[40rem] w-full scroll-mt-24 justify-center overflow-hidden bg-black">
+                    <section id="skills" className="relative flex min-h-[min(100vh,960px)] w-full scroll-mt-24 flex-col justify-center overflow-hidden bg-black py-16 md:py-20">
                               <DottedGlowBackground
                                         className="pointer-events-none mask-radial-to-90% mask-radial-at-center"
                                         opacity={1}
@@ -122,11 +122,11 @@ const Skills = () => {
                                         speedScale={1}
                               />
 
-                              <div className="relative z-10 px-4 pt-12 text-center md:pt-16">
+                              <div className="relative z-10 px-4 text-center">
                                         <h2 className="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold text-transparent md:text-7xl">
                                                   Skills
                                         </h2>
-                                        <div className="mx-auto mt-20 flex max-w-5xl flex-wrap items-center justify-center gap-8 md:mt-28 md:gap-12">
+                                        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap items-center justify-center gap-8 md:mt-14 md:gap-12">
                                                   <AnimatedTooltip
                                                             items={SKILLS.map((skill, index) => ({
                                                                       id: index,
@@ -146,10 +146,10 @@ const Skills = () => {
                                                   />
                                         </div>
 
-                                        <h3 className="mt-20 text-sm font-semibold tracking-[0.3em] text-neutral-400 uppercase md:mt-28">
+                                        <h3 className="mt-12 text-sm font-semibold tracking-[0.3em] text-neutral-400 uppercase md:mt-16">
                                                   AI-Native Tooling
                                         </h3>
-                                        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-4">
+                                        <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-4">
                                                   {AI_TOOLS.map((tool) => (
                                                             <Image
                                                                       key={tool.label}
@@ -163,10 +163,10 @@ const Skills = () => {
                                                   ))}
                                         </div>
 
-                                        <h3 className="mt-20 text-sm font-semibold tracking-[0.3em] text-neutral-400 uppercase md:mt-28">
+                                        <h3 className="mt-12 text-sm font-semibold tracking-[0.3em] text-neutral-400 uppercase md:mt-16">
                                                   State &amp; Data
                                         </h3>
-                                        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-4">
+                                        <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-4">
                                                   {STATE_DATA.map((tool) => (
                                                             <Image
                                                                       key={tool.label}
@@ -180,14 +180,6 @@ const Skills = () => {
                                                   ))}
                                         </div>
                               </div>
-
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-
-
                     </section>
           );
 };

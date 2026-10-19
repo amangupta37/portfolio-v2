@@ -18,8 +18,8 @@ const Hero = () => {
     <>
       <Vortex
         backgroundColor="black"
-        containerClassName="min-h-screen w-full"
-        className="flex min-h-screen w-full flex-col items-center justify-center px-6 py-16 md:px-10"
+        containerClassName="min-h-[min(100vh,960px)] w-full"
+        className="flex min-h-[min(100vh,960px)] w-full flex-col items-center justify-center px-6 py-16 md:px-10"
       >
         <Backdrop />
         <StarsBackground />

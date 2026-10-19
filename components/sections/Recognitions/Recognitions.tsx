@@ -45,9 +45,9 @@ const slides: SlideData[] = [
 
 const Recognitions = () => {
           return (
-                    <section id="recognitions" className="relative flex min-h-[40rem] w-full scroll-mt-24 justify-center overflow-hidden bg-black/[0.96] antialiased">
+                    <section id="recognitions" className="relative flex h-screen min-h-[650px] max-h-[900px] w-full scroll-mt-24 flex-col justify-center overflow-hidden bg-black/[0.96] py-8 antialiased">
                               <Spotlight />
-                              <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-32">
+                              <div className="relative z-10 mx-auto w-full max-w-7xl px-4">
                                         <h2 className="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
                                                   Recognitions
                                         </h2>
@@ -55,7 +55,7 @@ const Recognitions = () => {
                                                   Awards, shout-outs and milestones collected along the way.
                                         </p>
 
-                                        <div className="relative mt-16 w-full overflow-hidden pb-20">
+                                        <div className="relative mt-8 md:mt-12 w-full overflow-hidden pb-16">
                                                   <Carousel slides={slides} />
                                         </div>
                               </div>

@@ -31,8 +31,8 @@ const RootLayout = ({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <FollowerPointerCard className="flex w-full flex-1 flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        <FollowerPointerCard className="mx-auto flex w-full max-w-[1920px] flex-1 flex-col">
           {children}
         </FollowerPointerCard>
       </body>

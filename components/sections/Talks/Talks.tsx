@@ -24,7 +24,7 @@ const TALKS: string[] = [
 
 const Talks = () => {
           return (
-                    <section id="talks" className="relative flex min-h-screen w-full scroll-mt-24 justify-center overflow-hidden bg-black/[0.96] antialiased">
+                    <section id="talks" className="relative flex w-full scroll-mt-24 justify-center overflow-hidden bg-black/[0.96] antialiased">
                               <div
                                         className={cn(
                                                   "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
@@ -36,7 +36,7 @@ const Talks = () => {
 
                               <Backdrop />
 
-                              <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-24 pb-24 md:pt-32">
+                              <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 md:py-24">
                                         <h2 className="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
                                                   Tech Talks
                                         </h2>
