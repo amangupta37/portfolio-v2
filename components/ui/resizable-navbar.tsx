@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 
+import Image from "next/image";
 import React, { useRef, useState } from "react";
 
 interface NavbarProps {
@@ -73,9 +74,9 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible },
-            )
+            child as React.ReactElement<{ visible?: boolean }>,
+            { visible },
+          )
           : child,
       )}
     </motion.div>
@@ -235,14 +236,15 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="https://assets.aceternity.com/logo-dark.png"
+      <Image
+        src="/logo.png"
         alt="logo"
-        width={30}
-        height={30}
+        width={40}
+        height={40}
+        quality={100}
+        className="rounded-md"
       />
-      <span className="font-medium text-black dark:text-white">Startup</span>
+      <span className="font-medium text-black dark:text-white">Aman Gupta</span>
     </a>
   );
 };
@@ -261,9 +263,9 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
 } & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
+    | React.ComponentPropsWithoutRef<"a">
+    | React.ComponentPropsWithoutRef<"button">
+  )) => {
   const baseStyles =
     "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
