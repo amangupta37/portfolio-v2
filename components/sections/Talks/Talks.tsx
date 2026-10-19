@@ -24,7 +24,7 @@ const TALKS: string[] = [
 
 const Talks = () => {
           return (
-                    <section className="relative flex min-h-screen w-full justify-center overflow-hidden bg-black/[0.96] antialiased">
+                    <section id="talks" className="relative flex min-h-screen w-full scroll-mt-24 justify-center overflow-hidden bg-black/[0.96] antialiased">
                               <div
                                         className={cn(
                                                   "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",

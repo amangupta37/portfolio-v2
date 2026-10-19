@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const AboutMe = () => {
           return (
-                    <section className="relative flex min-h-screen w-full flex-col overflow-hidden bg-neutral-950 px-6 py-16 antialiased">
+                    <section id="about" className="relative flex min-h-screen w-full scroll-mt-24 flex-col overflow-hidden bg-neutral-950 px-6 py-16 antialiased">
                               <SparklesTitle title="About Me" className="relative z-10 mx-auto max-w-6xl" />
 
                               <BackgroundBeams />

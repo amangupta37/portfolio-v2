@@ -106,7 +106,7 @@ const STATE_DATA: { label: string; src: string }[] = [
 
 const Skills = () => {
           return (
-                    <section className="relative flex h-full min-h-[40rem] w-full justify-center overflow-hidden bg-black">
+                    <section id="skills" className="relative flex h-full min-h-[40rem] w-full scroll-mt-24 justify-center overflow-hidden bg-black">
                               <DottedGlowBackground
                                         className="pointer-events-none mask-radial-to-90% mask-radial-at-center"
                                         opacity={1}
