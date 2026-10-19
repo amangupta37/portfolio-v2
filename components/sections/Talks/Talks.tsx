@@ -49,7 +49,7 @@ const Talks = () => {
                                                             <DirectionAwareHover
                                                                       key={image}
                                                                       imageUrl={image}
-                                                                      className="h-72 w-full rounded-2xl border border-white/10 md:h-80 md:w-full"
+                                                                      className="h-52 w-full max-w-xs rounded-2xl border border-white/10 sm:h-72 sm:max-w-none md:h-80 md:w-full"
                                                             />
                                                   ))}
                                         </div>
