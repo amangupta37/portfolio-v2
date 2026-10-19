@@ -3,24 +3,43 @@ import Carousel, { type SlideData } from "@/components/ui/carousel";
 
 const slides: SlideData[] = [
           {
-                    title: "Mystic Mountains",
+                    title: "Recognition",
                     button: "View Recognition",
-                    src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    src: "/recognitions/recognition_01.JPG",
           },
           {
-                    title: "Urban Dreams",
+                    title: "Recognition",
                     button: "View Recognition",
-                    src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    src: "/recognitions/recognition_02.png",
           },
           {
-                    title: "Neon Nights",
+                    title: "Recognition",
                     button: "View Recognition",
-                    src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    src: "/recognitions/recognition_03.jpeg",
           },
           {
-                    title: "Desert Whispers",
+                    title: "Awards",
+                    button: "View Awards",
+                    src: "/awards/award_01.jpg",
+                    fit: "contain",
+          },
+          {
+                    title: "Awards",
+                    button: "View Awards",
+                    src: "/awards/award_02.jpg",
+                    fit: "contain",
+          },
+          {
+                    title: "Awards",
+                    button: "View Awards",
+                    src: "/awards/award_03.jpg",
+                    fit: "contain",
+          },
+          {
+                    title: "Awards",
                     button: "View Recognition",
-                    src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    src: "/awards/award_04.jpg",
+                    fit: "contain",
           },
 ];
 

@@ -7,6 +7,12 @@ export interface SlideData {
   title: string;
   button: string;
   src: string;
+  /**
+   * How the image should fill the card. Defaults to "cover" (fills edge to
+   * edge, may crop). Use "contain" to show the whole image letterboxed on a
+   * black card background.
+   */
+  fit?: "cover" | "contain";
 }
 
 interface SlideProps {
@@ -59,7 +65,8 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     yRef.current = 0;
   };
 
-  const { src, button, title } = slide;
+  const { src, title, fit = "cover" } = slide;
+  const isContain = fit === "contain";
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
@@ -79,7 +86,11 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         }}
       >
         <div
-          className="absolute top-0 left-0 h-full w-full overflow-hidden rounded-[1%] bg-[#1D1F2F] transition-all duration-150 ease-out"
+          className={`absolute top-0 left-0 h-full w-full overflow-hidden rounded-[1%] transition-all duration-150 ease-out ${
+            isContain
+              ? "bg-gradient-to-br from-neutral-900 via-black to-neutral-950"
+              : "bg-[#1D1F2F]"
+          }`}
           style={{
             transform:
               current === index
@@ -88,35 +99,23 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           }}
         >
           <div
-            className="absolute top-[-10%] left-[-10%] h-[120%] w-[120%] transition-opacity duration-700 ease-in-out"
-            style={{ opacity: current === index ? 1 : 0.5 }}
+            className={
+              isContain
+                ? "absolute inset-0"
+                : "absolute top-[-10%] left-[-10%] h-[120%] w-[120%]"
+            }
           >
             <Image
-              className="object-cover"
+              className={isContain ? "object-contain" : "object-cover"}
               alt={title}
               src={src}
               fill
-              sizes="70vmin"
+              sizes="(min-width: 768px) 52vmin, 64vmin"
+              quality={100}
             />
           </div>
-          {current === index && (
-            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
-          )}
         </div>
 
-        <article
-          className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${current === index ? "visible opacity-100" : "invisible opacity-0"
-            }`}
-        >
-          <h2 className="relative text-base font-semibold md:text-xl lg:text-2xl">
-            {title}
-          </h2>
-          <div className="flex justify-center">
-            <button className="mx-auto mt-4 flex h-10 w-fit items-center justify-center rounded-2xl border border-transparent bg-white px-4 py-2 text-xs text-black shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200 hover:shadow-lg sm:text-sm">
-              {button}
-            </button>
-          </div>
-        </article>
       </li>
     </div>
   );
