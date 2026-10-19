@@ -17,8 +17,6 @@ const Home = () => {
       <div id="timeline-section">
         <Timeline />
       </div>
-      {/* <AboutMe />
-      <AboutMe /> */}
       <Recognitions />
       <Talks />
       <PersonalBranding />

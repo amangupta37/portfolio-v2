@@ -26,6 +26,7 @@ interface JourneyEntry {
 }
 
 const LOGOS = {
+          flipkart: "/logos/flipkart.jpeg",
           simpplr: "/logos/simpplr.jpg",
           antino: "/logos/antino.jpg",
           ebeta: "/logos/ebeta.jpg",
@@ -34,18 +35,30 @@ const LOGOS = {
 const journey: JourneyEntry[] = [
           {
                     period: "Present",
+                    role: "Frontend Engineer-2",
+                    company: "Flipkart · Full-time",
+                    badge: "Oct 2026 — Present",
+                    summary: "",
+                    highlights: [
+
+                    ],
+                    stack: ["React", "TypeScript", "JavaScript"],
+                    logo: LOGOS.flipkart,
+                    current: true,
+          },
+          {
+                    period: "2026",
                     role: "Software Engineer II",
                     company: "Simpplr · Full-time · Remote",
-                    badge: "Nov 2025 — Present",
+                    badge: "Nov 2025 — Oct 2026",
                     summary:
-                              "Building scalable, micro-frontend based employee experience products at Simpplr, with a focus on performance and AI-assisted development workflows.",
+                              "Built scalable, micro-frontend based employee experience products at Simpplr, with a focus on performance and AI-assisted development workflows.",
                     highlights: [
-                              "Working on a Micro Frontend architecture serving a large enterprise user base",
-                              "Driving modern JavaScript/TypeScript practices across the frontend",
+                              "Worked on a Micro Frontend architecture serving a large enterprise user base",
+                              "Drove modern JavaScript/TypeScript practices across the frontend",
                     ],
                     stack: ["Micro Frontend", "React", "TypeScript", "JavaScript"],
                     logo: LOGOS.simpplr,
-                    current: true,
           },
           {
                     period: "2025",
