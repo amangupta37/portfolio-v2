@@ -45,7 +45,7 @@ const slides: SlideData[] = [
 
 const Recognitions = () => {
           return (
-                    <section id="recognitions" className="relative flex h-screen min-h-[650px] max-h-[900px] w-full scroll-mt-24 flex-col justify-center overflow-hidden bg-black/[0.96] py-8 antialiased">
+                    <section id="recognitions" className="relative flex h-auto min-h-0 max-h-none w-full scroll-mt-16 flex-col justify-start overflow-hidden bg-black/[0.96] pt-4 pb-12 antialiased md:h-screen md:min-h-[650px] md:max-h-[900px] md:scroll-mt-24 md:justify-center md:py-8">
                               <Spotlight />
                               <div className="relative z-10 mx-auto w-full max-w-7xl px-4">
                                         <h2 className="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
